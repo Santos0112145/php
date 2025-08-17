@@ -47,7 +47,7 @@
 	<!-- Título principal de la página -->
 	<header class="mb-6">
 		<h1 class="text-6xl font-extrabold text-white bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 p-8 rounded-xl shadow-xl text-center animate-pulse">
-			Bienvenido a la página de Santos Nazareno
+			Bienvenido a la página de Cristhia Santos Nazareno
 		</h1>
 	</header>
 	<!-- Imágenes decorativas -->
