@@ -22,7 +22,7 @@
 	// Llamada a la API local con cURL
 	// ===============================
 	// Se realiza una petición HTTP a api.php para obtener los datos en formato JSON
-	$url = "http://localhost:8000/api.php"; // Ruta de la API local 
+	$url = "http://localhost:8001/api.php"; // Ruta de la API local 
 	$ch = curl_init($url); // Inicializa cURL con la URL
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); // Configura cURL para devolver el resultado como string
 	$api_response = curl_exec($ch); // Ejecuta la petición y guarda la respuesta
@@ -47,7 +47,7 @@
 	<!-- Título principal de la página -->
 	<header class="mb-6">
 		<h1 class="text-6xl font-extrabold text-white bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 p-8 rounded-xl shadow-xl text-center animate-pulse">
-			Bienvenido a la página de Cristhia Santos Nazareno
+			Bienvenido a la página de Cristhian Santos Nazareno
 		</h1>
 	</header>
 	<!-- Imágenes decorativas -->
@@ -58,7 +58,7 @@
 	<!-- Formulario para ingresar la edad -->
 	<form method="post" class="mb-6 flex flex-col items-center gap-4 bg-white/10 p-6 rounded-lg shadow-lg w-full max-w-md">
 		<label for="edad" class="text-xl text-white font-bold">Ingresa tu edad:</label>
-		<input type="number" name="edad" id="edad" min="0" max="120" value="<?= htmlspecialchars($edad) ?>" class="p-2 rounded text-black w-32 text-center font-semibold" required>
+		<input type="number" name="edad" id="edad" min="0" max="100" value="<?= htmlspecialchars($edad) ?>" class="p-2 rounded text-black w-32 text-center font-semibold" required>
 		<button type="submit" class="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white font-bold py-2 px-6 rounded-lg shadow hover:scale-105 transition">Ver resultado</button>
 	</form>
 	<!-- Mensaje condicional según la edad ingresada -->
@@ -66,6 +66,7 @@
 		<?= $condicional ?>
 	</h2>
 	<!-- Tabla con la respuesta de la API -->
+	
 	<div class="bg-white/10 text-white p-4 rounded-lg shadow w-full max-w-xl">
 		<h3 class="text-2xl font-bold mb-2">Respuesta de la API:</h3>
 		<table class="w-full text-lg">
@@ -84,5 +85,6 @@
 			</tbody>
 		</table>
 	</div>
+				
 </body>
 </html>
