@@ -1,9 +1,9 @@
 <?php
 	// ===============================
-	// Variables de usuario
+	// Lógica para recibir la edad del usuario por formulario
 	// ===============================
 	$nombre = "Santos Nazareno"; // Nombre del usuario
-	$edad = 30; // Edad actual
+	$edad = isset($_POST['edad']) ? (int)$_POST['edad'] : 18; // Edad ingresada por el usuario o valor por defecto
 	$nueva_edad = $edad + 1; // Edad incrementada en 1
 
 	// Mensaje personalizado con nombre y edad
@@ -55,7 +55,13 @@
 		<img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Imagen 1" class="w-64 h-64 object-cover rounded-2xl shadow-lg border-4 border-purple-500">
 		<img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Imagen 2" class="w-64 h-64 object-cover rounded-2xl shadow-lg border-4 border-pink-500">
 	</div>
-	<!-- Mensaje condicional según la edad -->
+	<!-- Formulario para ingresar la edad -->
+	<form method="post" class="mb-6 flex flex-col items-center gap-4 bg-white/10 p-6 rounded-lg shadow-lg w-full max-w-md">
+		<label for="edad" class="text-xl text-white font-bold">Ingresa tu edad:</label>
+		<input type="number" name="edad" id="edad" min="0" max="120" value="<?= htmlspecialchars($edad) ?>" class="p-2 rounded text-black w-32 text-center font-semibold" required>
+		<button type="submit" class="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white font-bold py-2 px-6 rounded-lg shadow hover:scale-105 transition">Ver resultado</button>
+	</form>
+	<!-- Mensaje condicional según la edad ingresada -->
 	<h2 class="text-5xl font-extrabold text-white bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 p-6 rounded-lg shadow-lg text-center ">
 		<?= $condicional ?>
 	</h2>
